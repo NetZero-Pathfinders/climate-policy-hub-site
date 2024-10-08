@@ -1,0 +1,47 @@
+{
+  "name": "climate-policy-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "develop": "npm run prepareFramework && next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepareFramework": "node ./scripts/prepareFramework.js"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "d3-array": "^3.2.4",
+    "d3-dsv": "^3.0.1",
+    "dayjs": "^1.11.13",
+    "framer-motion": "^11.5.4",
+    "lodash": "^4.17.21",
+    "next": "14.2.11",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "usehooks-ts": "^3.1.0"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "preserve",
+    "quoteProps": "preserve",
+    "requirePragma": false,
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": false
+  }
+}
