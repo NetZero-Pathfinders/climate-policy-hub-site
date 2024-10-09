@@ -40,7 +40,29 @@ export default function HomeBanner() {
             }
           </Heading>
           <HStack spacing={3}>
-            <Button size="lg">{"Share a best practice"}</Button>
+            <Button
+              size="lg"
+              leftIcon={
+                <svg
+                  viewBox="0 0 120 120"
+                  fill="none"
+                  stroke="currentcolor"
+                  strokeWidth={2}
+                  style={{ width: "1.5rem", height: "1.5rem" }}
+                >
+                  <path
+                    vectorEffect="non-scaling-stroke"
+                    d="M20 20H100C105.5 20 110 24.5 110 30V90C110 95.5 105.5 100 100 100H20C14.5 100 10 95.5 10 90V30C10 24.5 14.5 20 20 20Z"
+                  />
+                  <path
+                    vectorEffect="non-scaling-stroke"
+                    d="M110 30L60 65L10 30"
+                  />
+                </svg>
+              }
+            >
+              {"Share a best practice"}
+            </Button>
             <ButtonLink
               size="lg"
               colorScheme="gray"
@@ -86,7 +108,29 @@ export default function HomeBanner() {
               "The initiative seeks to remain dynamic and continually updated with the engagement of future B20 cycles, integrating their recommendations to ensure they reflect the latest global priorities and strategies for climate action."
             }
           </Text>
-          <Button size="lg">{"Share a best practice"}</Button>
+          <Button
+            size="lg"
+            leftIcon={
+              <svg
+                viewBox="0 0 120 120"
+                fill="none"
+                stroke="currentcolor"
+                strokeWidth={2}
+                style={{ width: "1.5rem", height: "1.5rem" }}
+              >
+                <path
+                  vectorEffect="non-scaling-stroke"
+                  d="M20 20H100C105.5 20 110 24.5 110 30V90C110 95.5 105.5 100 100 100H20C14.5 100 10 95.5 10 90V30C10 24.5 14.5 20 20 20Z"
+                />
+                <path
+                  vectorEffect="non-scaling-stroke"
+                  d="M110 30L60 65L10 30"
+                />
+              </svg>
+            }
+          >
+            {"Share a best practice"}
+          </Button>
         </Stack>
       </Center>
     </Container>
