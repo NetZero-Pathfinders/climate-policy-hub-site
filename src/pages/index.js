@@ -60,8 +60,15 @@ export default function IndexPage({ framework }) {
           </Accordion>
         </Container>
 
-        <Container maxW="90rem" px={0}>
-          <Stack px={5} py={20} bg="blue.1000" color="white" spacing={6}>
+        <Container
+          maxW="90rem"
+          px={0}
+          bgImage="url('/images/bg-cover.png')"
+          bgSize="cover"
+          bgRepeat="no-repeat"
+          bgPosition="center"
+        >
+          <Stack px={5} py={20} bg="rgba(0,0,0,0.5)" color="white" spacing={6}>
             <Heading maxW="55rem">
               {
                 "Share your best practices with us. Get in touch to get your best practice featured."
@@ -231,6 +238,45 @@ function ActionAccordion({ items }) {
                     </LinkBox>
                   )
                 })}
+                <HStack
+                  p={5}
+                  bg="blue.500"
+                  color="white"
+                  alignItems="flex-start"
+                  cursor="pointer"
+                  _hover={{ bg: "blue.600" }}
+                >
+                  <svg
+                    viewBox="0 0 120 120"
+                    fill="none"
+                    stroke="currentcolor"
+                    strokeWidth={2}
+                    style={{
+                      width: "1.5rem",
+                      height: "1.5rem",
+                      marginTop: "0.25rem",
+                    }}
+                  >
+                    <path
+                      vectorEffect="non-scaling-stroke"
+                      d="M20 20H100C105.5 20 110 24.5 110 30V90C110 95.5 105.5 100 100 100H20C14.5 100 10 95.5 10 90V30C10 24.5 14.5 20 20 20Z"
+                    />
+                    <path
+                      vectorEffect="non-scaling-stroke"
+                      d="M110 30L60 65L10 30"
+                    />
+                  </svg>
+                  <Stack spacing={2}>
+                    <Text fontWeight={600} fontSize="2xl">
+                      {"Share a best practice"}
+                    </Text>
+                    <Text fontSize="lg">
+                      {
+                        "Do you have a best practice to share? Email us at co2excel@bloomberg.net"
+                      }
+                    </Text>
+                  </Stack>
+                </HStack>
               </SimpleGrid>
             </AccordionPanel>
           </AccordionItem>
