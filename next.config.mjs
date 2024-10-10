@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // basePath: "/climate-policy-hub-site",
+  basePath:
+    process.env.NODE_ENV === "development" ? "" : "/climate-policy-hub-site",
   reactStrictMode: true,
   output: "export",
 }
