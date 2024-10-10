@@ -5,6 +5,7 @@ import {
   Box,
   Heading,
   Text,
+  Center,
   Container,
   SimpleGrid,
   Accordion,
@@ -32,7 +33,7 @@ export default function IndexPage({ framework }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Stack spacing={20}>
+      {/* <Stack spacing={20}>
         <HomeBanner />
         <Container maxW="90rem" px={5} id="best-practices">
           <Accordion
@@ -115,7 +116,7 @@ export default function IndexPage({ framework }) {
             </HStack>
           </Container>
         </Box>
-      </Stack>
+      </Stack> */}
     </>
   )
 }
