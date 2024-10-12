@@ -34,13 +34,13 @@ function ChartContainer(props) {
 }
 
 export const baseComponents = {
-  h1: (props) => <Heading as="h1" {...props} />,
-  h2: (props) => <Heading as="h2" {...props} />,
-  h3: (props) => <Heading as="h3" {...props} />,
-  h4: (props) => <Heading as="h4" {...props} />,
-  h5: (props) => <Heading as="h5" {...props} />,
-  h6: (props) => <Heading as="h6" {...props} />,
-  p: (props) => <Text as="p" fontSize="lg" {...props} />,
+  h1: (props) => <Heading as="h1" py={6} {...props} />,
+  h2: (props) => <Heading as="h2" variant="heading2" py={6} {...props} />,
+  h3: (props) => <Heading as="h3" py={6} {...props} />,
+  h4: (props) => <Heading as="h4" py={6} {...props} />,
+  h5: (props) => <Heading as="h5" py={6} {...props} />,
+  h6: (props) => <Heading as="h6" py={6} {...props} />,
+  p: (props) => <Text as="p" fontSize="xl" pb={6} {...props} />,
 }
 
 export const bestPracticeComponents = {
@@ -48,25 +48,26 @@ export const bestPracticeComponents = {
   KeyFigure: () => null,
   BarChart: (props) => {
     return (
-      <ChartContainer>
+      <ChartContainer pb={6}>
         <ChartWrapper chartType="bar" {...props} />
       </ChartContainer>
     )
   },
   LineChart: (props) => {
     return (
-      <ChartContainer>
+      <ChartContainer pb={6}>
         <ChartWrapper chartType="line" {...props} />
       </ChartContainer>
     )
   },
   ScatterPlot: (props) => {
     return (
-      <ChartContainer>
+      <ChartContainer pb={6}>
         <ChartWrapper chartType="scatter" {...props} />
       </ChartContainer>
     )
   },
+  
 }
 
 export default { ...baseComponents, ...bestPracticeComponents }

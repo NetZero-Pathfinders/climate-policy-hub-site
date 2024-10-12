@@ -4,13 +4,36 @@
 
 export default {
   Button: {
-    baseStyle: { borderRadius: "sm", letterSpacing: "tight" },
+    baseStyle: { borderRadius: "none", letterSpacing: "tight" },
   },
   Heading: {
-    baseStyle: { letterSpacing: "tight", lineHeight: "shorter" },
+    baseStyle: { letterSpacing: "tight", lineHeight: "shorter", fontWeight: 700, },
+    variants: {
+      bestPracticeTitle: {
+        fontSize: ["3xl", "4xl", "5xl", "6xl"],
+        letterSpacing: "tight",
+        lineHeight: "shorter"
+      },
+      heading2: {
+        fontSize: ["2xl", "3xl", "4xl"],
+        letterSpacing: "tight",
+        lineHeight: "shorter"
+      },
+    },
   },
   Text: {
-    baseStyle: { letterSpacing: "tight" },
+    baseStyle: { letterSpacing: "tight", lineHeight: "tall" },
+    variants: {
+      pageSubtitle: {
+        fontSize: ["xl", "null", "null", "2xl"],
+        letterSpacing: "tight",
+      },
+      bodyLarge: {
+        fontSize: "xl",
+        letterSpacing: "tight",
+        lineHeight: "tall"
+      },
+    },
   },
   Accordion: {
     baseStyle: {
