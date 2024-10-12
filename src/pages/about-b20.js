@@ -1,10 +1,19 @@
 import {
+  EnhanceIcon,
+  AccelerateIcon,
+  IncreaseIcon,
+  FosterIcon,
+  PromoteIcon,
+} from "@/components/Icon"
+import {
   Stack,
   Heading,
   Text,
   SimpleGrid,
   Box,
   Divider,
+  Center,
+  Icon,
 } from "@chakra-ui/react"
 
 export default function AboutB20Page() {
@@ -57,22 +66,44 @@ export default function AboutB20Page() {
         >
           <Divider gridColumn="1 / -1" opacity={1} />
           {[
-            "Promote inclusive growth and combat hunger, poverty and inequalities",
-            "Accelerate a fair net zero transition",
-            "Increase productivity through innovation",
-            "Foster resilience of global value chains",
-            "Enhance human capital",
+            {
+              title:
+                "Promote inclusive growth and combat hunger, poverty and inequalities",
+              icon: PromoteIcon
+            },
+            {
+              title:
+                "Accelerate a fair net zero transition",
+              icon: AccelerateIcon
+            },
+            {
+              title:
+                "Increase productivity through innovation",
+              icon: IncreaseIcon
+            },
+            {
+              title:
+                "Foster resilience of global value chains",
+              icon: FosterIcon
+            },
+            {
+              title:
+                "Enhance human capital",
+              icon: EnhanceIcon
+            }
           ].map((d, i) => {
             return (
               <Stack key={i} spacing={3} alignItems="center">
-                <Box w={20} h={20} bg="blue.1000" borderRadius="full" />
+                <Center w={20} h={20} bg="blue.1000" borderRadius="full">
+                  <Icon as={d.icon} w="2.75rem" h="2.75rem" color="white" />
+                </Center>
                 <Text
                   fontSize="xl"
                   lineHeight="shorter"
                   fontWeight={600}
                   textAlign="center"
                 >
-                  {d}
+                  {d.title}
                 </Text>
               </Stack>
             )
