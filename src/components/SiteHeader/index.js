@@ -64,9 +64,9 @@ export default function SiteHeader() {
           <Link href="/about-b20" fontWeight={600} lineHeight="shorter">
             {"About B20"}
           </Link>
-          <Box fontWeight={600} lineHeight="shorter">
+          <Link href="/about-bnef" fontWeight={600} lineHeight="shorter">
             {"About BloombergNEF"}
-          </Box>
+          </Link>
         </HStack>
         <Stack
           gridColumn="-5 / -1"
