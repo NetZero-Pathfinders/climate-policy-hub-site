@@ -10,6 +10,8 @@ import {
   Icon,
 } from "@chakra-ui/react"
 
+import { Link } from "@/components/Link"
+
 export default function CallToAction() {
   return (
     <Container
@@ -20,17 +22,14 @@ export default function CallToAction() {
       bgRepeat="no-repeat"
       bgPosition="center"
     >
-      <Stack px={5} py={20} bg="rgba(0,0,0,0.5)" color="white" spacing={6}>
-        <Heading maxW="55rem">
+      <Stack px={10} py={20} bg="rgba(0,0,0,0.5)" color="white" spacing={6}>
+        <Text maxW="55rem" variant="bodyExtraLarge">
           {
-            "Share your best practices with us. Get in touch to get your best practice featured."
+            "Share your best practices with us. Get in touch to get your best practice featured. Email us at "
           }
-        </Heading>
-        <Text fontSize="2xl" fontWeight={600}>
-          {"Email us at "}
-          <Text as="span" color="blue.500">
-            {"co2excel@bloomberg.net"}
-          </Text>
+          <Link href="mailto:pathfinders@bloomberg.net" color="blue.500">
+            {"pathfinders@bloomberg.net"}
+          </Link>
           {"."}
         </Text>
       </Stack>

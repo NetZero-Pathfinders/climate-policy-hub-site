@@ -40,7 +40,8 @@ export default function HomeBanner() {
             }
           </Heading>
           <HStack spacing={3}>
-            <Button
+            <ButtonLink
+              href="mailto:pathfinders@bloomberg.net"
               size="lg"
               leftIcon={
                 <svg
@@ -62,7 +63,7 @@ export default function HomeBanner() {
               }
             >
               {"Share a best practice"}
-            </Button>
+            </ButtonLink>
             <ButtonLink
               size="lg"
               colorScheme="gray"
@@ -108,7 +109,8 @@ export default function HomeBanner() {
               "The initiative seeks to remain dynamic and continually updated with the engagement of future B20 cycles, integrating their recommendations to ensure they reflect the latest global priorities and strategies for climate action."
             }
           </Text>
-          <Button
+          <ButtonLink
+            href="mailto:pathfinders@bloomberg.net"
             size="lg"
             leftIcon={
               <svg
@@ -130,7 +132,7 @@ export default function HomeBanner() {
             }
           >
             {"Share a best practice"}
-          </Button>
+          </ButtonLink>
         </Stack>
       </Center>
     </Container>
