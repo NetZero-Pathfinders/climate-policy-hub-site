@@ -99,10 +99,12 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const { slug } = params
 
-  const pages = await getPages({
+  const pagesRaw = await getPages({
     pageType: "best-practices",
     fields: ["frontmatter", "slug"],
   })
+
+  const pages = pagesRaw.filter((d) => d.frontmatter?.b20_action?.length)
 
   const source = await getPage({
     slug: `/best-practices/${slug}`,
