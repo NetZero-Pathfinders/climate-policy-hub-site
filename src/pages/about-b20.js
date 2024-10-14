@@ -11,7 +11,6 @@ import {
   Heading,
   Text,
   SimpleGrid,
-  Box,
   Divider,
   Center,
   Icon,
@@ -21,7 +20,11 @@ export default function AboutB20Page() {
   return (
     <Stack spacing={20} pb={20}>
       <SimpleGrid columns={24} gridGap="0.0625rem">
-        <Stack spacing={10} gridColumn={["2 / -2", null, null, "5 / span 14"]} py={5} px={5}>
+        <Stack
+          spacing={10}
+          gridColumn={["2 / -2", null, null, "5 / span 14"]}
+          py={5}
+        >
           <Stack spacing={6}>
             <Heading fontSize="5xl">{"About B20"}</Heading>
             <Text variant="pageSubtitle">
@@ -72,13 +75,7 @@ export default function AboutB20Page() {
             </Text>
           </Stack>
         </Stack>
-        <SimpleGrid
-          columns={5}
-          gridGap={10}
-          gridColumn="2 / -2"
-          pt={10}
-          px={5}
-        >
+        <SimpleGrid columns={5} gridGap={10} gridColumn="2 / -2" pt={10} px={5}>
           <Divider gridColumn="1 / -1" opacity={1} />
           {[
             {
