@@ -19,71 +19,79 @@ import CallToAction from "@/components/CallToAction"
 
 export default function BestPracticePage({ slug, source, pages, tags }) {
   const { frontmatter } = source
-  console.log("Source", source)
   return (
     <Stack pb={20}>
-    <SimpleGrid columns={24} gridGap="0.0625rem">
-      <Stack gridColumn={["2 / -2", null, null, "5 / span 14"]} spacing={6} pt={16}>
-        <Stack spacing={3}>
-          <Heading as="h1" variant="bestPracticeTitle">
-            {frontmatter.title}
-          </Heading>
-          {frontmatter.description && (
-            <Text variant="pageSubtitle">{frontmatter.description}</Text>
-          )}
-          <Text fontSize="lg" fontWeight={600} color="blue.500">
-            {`Updated on ${day(frontmatter.date).format("MMMM DD, YYYY")}`}
-          </Text>
-          <Wrap gridColumn="2 / span 15" spacing={3} py={3}>
-            {tags.map((tag) => {
-              return (
-                <WrapItem
-                  key={tag.id}
-                  bg="gray.100"
-                  px={2}
-                  py={1}
-                  borderRadius="sm"
-                  fontWeight={600}
-                >
-                  {tag.name}
-                </WrapItem>
-              )
-            })}
-            {frontmatter.regions.map((region) => {
-              return (
-                <WrapItem
-                  key={region}
-                  bg="gray.100"
-                  px={2}
-                  py={1}
-                  borderRadius="sm"
-                  fontWeight={600}
-                >
-                  {region}
-                </WrapItem>
-              )
-            })}
-          </Wrap>
+      <SimpleGrid columns={24} gridGap="0.0625rem">
+        <Stack
+          gridColumn={["2 / -2", null, null, "5 / span 14"]}
+          spacing={6}
+          pt={16}
+        >
+          <Stack spacing={3}>
+            <Heading as="h1" variant="bestPracticeTitle">
+              {frontmatter.title}
+            </Heading>
+            {frontmatter.description && (
+              <Text variant="pageSubtitle">{frontmatter.description}</Text>
+            )}
+            <Text fontSize="lg" fontWeight={600} color="blue.500">
+              {`Updated on ${day(frontmatter.date).format("MMMM DD, YYYY")}`}
+            </Text>
+            <Wrap gridColumn="2 / span 15" spacing={3} py={3}>
+              {tags.map((tag) => {
+                return (
+                  <WrapItem
+                    key={tag.id}
+                    bg="gray.100"
+                    px={2}
+                    py={1}
+                    borderRadius="sm"
+                    fontWeight={600}
+                  >
+                    {tag.name}
+                  </WrapItem>
+                )
+              })}
+              {frontmatter.regions.map((region) => {
+                return (
+                  <WrapItem
+                    key={region}
+                    bg="gray.100"
+                    px={2}
+                    py={1}
+                    borderRadius="sm"
+                    fontWeight={600}
+                  >
+                    {region}
+                  </WrapItem>
+                )
+              })}
+            </Wrap>
+          </Stack>
+          <Stack spacing={3} pb={20}>
+            <MDXRemote {...source} components={mdxComponents}>
+              {"Best practice"}
+            </MDXRemote>
+          </Stack>
         </Stack>
-        <Stack spacing={3} pb={20}>
-          <MDXRemote {...source} components={mdxComponents}>
-            {"Best practice"}
-          </MDXRemote>
-        </Stack>
-      </Stack>
-    </SimpleGrid>
-    <CallToAction />
+      </SimpleGrid>
+      <CallToAction />
     </Stack>
   )
 }
 
 export const getStaticPaths = async () => {
-  const pages = await getPages({ pageType: "best-practices" })
+  const pages = await getPages({
+    pageType: "best-practices",
+    fields: ["frontmatter", "slug"],
+  })
   return {
-    paths: pages.map((page) => {
-      const slug = page.slug.split("/").pop()
-      return { params: { slug } }
-    }),
+    paths: pages
+      .filter((d) => d.frontmatter?.b20_action?.length)
+      .map((page) => {
+        const slug = page.slug.split("/").pop()
+        return { params: { slug } }
+      }),
     fallback: false,
   }
 }
@@ -91,7 +99,10 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const { slug } = params
 
-  const pages = await getPages({ pageType: "best-practices" })
+  const pages = await getPages({
+    pageType: "best-practices",
+    fields: ["frontmatter", "slug"],
+  })
 
   const source = await getPage({
     slug: `/best-practices/${slug}`,
