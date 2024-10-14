@@ -19,8 +19,7 @@ import {
 import day from "dayjs"
 
 import HomeBanner from "@/components/HomeBanner"
-import { LinkBox, LinkOverlay } from "@/components/Link"
-import SiteFooter from "@/components/SiteFooter"
+import { LinkBox, LinkOverlay, Link } from "@/components/Link"
 import CallToAction from "@/components/CallToAction"
 
 export default function IndexPage({ framework }) {
@@ -62,7 +61,7 @@ export default function IndexPage({ framework }) {
           </Accordion>
         </Container>
 
-       <CallToAction />
+        <CallToAction />
       </Stack>
     </>
   )
@@ -186,7 +185,8 @@ function ActionAccordion({ items }) {
                     </LinkBox>
                   )
                 })}
-                <HStack
+                <LinkBox
+                  as={HStack}
                   p={5}
                   bg="blue.500"
                   color="white"
@@ -216,15 +216,16 @@ function ActionAccordion({ items }) {
                   </svg>
                   <Stack spacing={2}>
                     <Text fontWeight={600} fontSize="2xl">
-                      {"Share a best practice"}
+                      <LinkOverlay href="mailto:pathfinders@bloomberg.net">
+                        {"Share a best practice"}
+                      </LinkOverlay>
                     </Text>
                     <Text fontSize="lg">
-                      {
-                        "Do you have a best practice to share? Email us at co2excel@bloomberg.net"
-                      }
+                      {"Do you have a best practice to share? Email us at "}
+                      <Link href="mailto:pathfinders@bloomberg.net">{"pathfinders@bloomberg.net"}</Link>
                     </Text>
                   </Stack>
-                </HStack>
+                </LinkBox>
               </SimpleGrid>
             </AccordionPanel>
           </AccordionItem>

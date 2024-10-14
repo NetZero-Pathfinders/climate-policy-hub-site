@@ -33,6 +33,12 @@ export default {
         letterSpacing: "tight",
         lineHeight: "tall"
       },
+      bodyExtraLarge: {
+        fontSize: ["2xl", null, "3xl", "4xl"],
+        letterSpacing: "tight",
+        lineHeight: "short",
+        fontWeight: 600,
+      },
     },
   },
   Accordion: {

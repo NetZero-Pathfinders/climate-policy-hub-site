@@ -6,15 +6,11 @@ import {
   Stack,
   Container,
   SimpleGrid,
-  Link as ChakraLink,
 } from "@chakra-ui/react"
-import NextLink from "next/link"
 
+import { LinkOverlay, LinkBox, Link } from "@/components/Link"
 import BinaryGrid from "@/components/BinaryGrid"
 
-const Link = forwardRef((props, ref) => {
-  return <ChakraLink as={NextLink} ref={ref} {...props} />
-})
 
 export default function SiteHeader() {
   const rows = 4
@@ -68,13 +64,14 @@ export default function SiteHeader() {
             {"About BloombergNEF"}
           </Link>
         </HStack>
-        <Stack
+        <LinkBox
+          as="box"
           gridColumn="-5 / -1"
           gridRow="1 / span 4"
           bg="blue.1000"
           color="white"
           alignItems="center"
-          pt={5}
+          pt={10}
           pb={10}
           px={5}
           position="relative"
@@ -108,10 +105,10 @@ export default function SiteHeader() {
               </svg>
             </Box>
           </Center>
-          <Box fontSize="lg" fontWeight={600} lineHeight="shorter">
+          <LinkOverlay href="mailto:pathfinders@bloomberg.net" fontSize="lg" fontWeight={600} lineHeight="shorter">
             {"Share a best practice"}
-          </Box>
-        </Stack>
+          </LinkOverlay>
+        </LinkBox>
       </SimpleGrid>
     </Container>
   )
