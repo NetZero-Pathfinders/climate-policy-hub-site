@@ -1,4 +1,4 @@
-import { Heading, Text, Box } from "@chakra-ui/react"
+import { Heading, Text, Box, Stack, SimpleGrid } from "@chakra-ui/react"
 
 import ChartWrapper from "@/components/ChartWrapper"
 
@@ -44,8 +44,46 @@ export const baseComponents = {
 }
 
 export const bestPracticeComponents = {
-  KeyFigures: () => null,
-  KeyFigure: () => null,
+  KeyFigures: (props) => {
+    return (
+      <Box
+        as="aside"
+        gridColumn={["1 / -1", null, null, null, "2 / -2"]}
+        pb={10}
+      >
+        <SimpleGrid
+          as="ul"
+          columns={[1, null, null, 3]}
+          spacing={10}
+          {...props}
+        />
+      </Box>
+    )
+  },
+  KeyFigure: ({ title, subtitle, ...restProps }) => {
+    return (
+      <Stack
+        as="li"
+        spacing={3}
+        borderBottom="0.25rem solid"
+        borderColor="black"
+        py={[0, null, null, 6]}
+        {...restProps}
+      >
+        <Heading as="h3" fontSize="3xl" lineHeight="shorter" color="blue.500">
+          {title}
+        </Heading>
+        <Text
+          fontSize="xl"
+          lineHeight="short"
+          fontWeight={500}
+          color="gray.500"
+        >
+          {subtitle}
+        </Text>
+      </Stack>
+    )
+  },
   BarChart: (props) => {
     return (
       <ChartContainer pb={6}>
@@ -67,7 +105,6 @@ export const bestPracticeComponents = {
       </ChartContainer>
     )
   },
-  
 }
 
 export default { ...baseComponents, ...bestPracticeComponents }
