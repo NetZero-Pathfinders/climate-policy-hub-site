@@ -6,6 +6,7 @@ import {
   Stack,
   Container,
   SimpleGrid,
+  textDecoration,
 } from "@chakra-ui/react"
 
 import { LinkOverlay, LinkBox, Link } from "@/components/Link"
@@ -27,7 +28,7 @@ export default function SiteHeader() {
           <BinaryGrid rows={rows} color="gray.200" gridRow="1 / -1" />
         </Box>
         <HStack
-          gridColumn={["1 / span 8", "2 / span 8", null, "2 / span 4"]}
+          gridColumn={["1 / span 12", "2 / span 8", null, "2 / span 4"]}
           gridRow="2 / span 2"
           bg="white"
           position="relative"
@@ -37,8 +38,8 @@ export default function SiteHeader() {
           alignItems="flex-end"
           whiteSpace="nowrap"
         >
-          <Stack spacing={1}>
-            <Link href="/" fontWeight={700} lineHeight="shorter">
+          <Stack spacing={0}>
+            <Link href="/" fontWeight={700} lineHeight="shorter" _hover={{ textDecoration: "none", color: "blue.500" }}>
               {"Climate Policy Hub"}
             </Link>
             <Box fontWeight={600} lineHeight="shorter" color="gray.500">
@@ -48,7 +49,7 @@ export default function SiteHeader() {
         </HStack>
         <Stack
           direction={["column", null, "row"]}
-          gridColumn={["10 / -1", "16 / -1", null, "7 / span 10"]}
+          gridColumn={["12 / -1", "16 / -1", null, "7 / span 10"]}
           gridRow="2 / span 2"
           bg="white"
           position="relative"

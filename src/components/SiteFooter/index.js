@@ -34,7 +34,7 @@ export default function SiteFooter() {
             textAlign={["center", null, null, "left"]}
           >
             {
-              "© 2022 Bloomberg Finance L.P. All rights reserved. Privacy Terms Disclaimer"
+              "© 2024 Bloomberg Finance L.P. All rights reserved. Privacy Terms Disclaimer"
             }
           </Text>
         </Box>
