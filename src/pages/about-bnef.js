@@ -1,21 +1,5 @@
 import CallToAction from "@/components/CallToAction"
-import {
-  EnhanceIcon,
-  AccelerateIcon,
-  IncreaseIcon,
-  FosterIcon,
-  PromoteIcon,
-} from "@/components/Icon"
-import {
-  Stack,
-  Heading,
-  Text,
-  SimpleGrid,
-  Box,
-  Divider,
-  Center,
-  Icon,
-} from "@chakra-ui/react"
+import { Stack, Heading, Text, SimpleGrid } from "@chakra-ui/react"
 
 export default function AboutB20Page() {
   return (
@@ -25,7 +9,6 @@ export default function AboutB20Page() {
           spacing={10}
           gridColumn={["2 / -2", null, null, "5 / span 14"]}
           py={5}
-          px={5}
         >
           <Stack spacing={6}>
             <Heading fontSize="5xl">{"About BloombergNEF"}</Heading>

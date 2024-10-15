@@ -1,4 +1,4 @@
-import { ChakraProvider, Box, Center } from "@chakra-ui/react"
+import { ChakraProvider, Box } from "@chakra-ui/react"
 
 import theme from "@/styles/theme"
 import SiteHeader from "@/components/SiteHeader"
