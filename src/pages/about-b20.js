@@ -75,7 +75,7 @@ export default function AboutB20Page() {
             </Text>
           </Stack>
         </Stack>
-        <SimpleGrid columns={5} gridGap={10} gridColumn="2 / -2" pt={10} px={5}>
+        <SimpleGrid columns={[1, null, 3, null, 5]} gridGap={10} gridColumn="2 / -2" pt={10} px={5}>
           <Divider gridColumn="1 / -1" opacity={1} />
           {[
             {
