@@ -27,19 +27,19 @@ export default function HomeBanner() {
         </Box>
         <Stack
           p={5}
-          gridColumn="2 / span 15"
+          gridColumn={["1 / -1", "2 / -2", null, "2 / span 15"]}
           gridRow={["1 / span 8", null, null, null, "1 / span 8"]}
           bg="white"
           spacing={10}
           position="relative"
           overflow="hidden"
         >
-          <Heading fontSize="4xl" letterSpacing="tighter">
+          <Heading fontSize={["2xl", "3xl", null, "4xl"]} letterSpacing="tighter">
             {
               "The B20 Climate Policy Hub, in partnership with BloombergNEF, aims to help governments and companies to accelerate the transition to a low-carbon economy"
             }
           </Heading>
-          <HStack spacing={3}>
+          <Stack spacing={3} direction={["column", null, "row"]}>
             <ButtonLink
               href="mailto:pathfinders@bloomberg.net"
               size="lg"
@@ -72,7 +72,7 @@ export default function HomeBanner() {
             >
               {"See best practices"}
             </ButtonLink>
-          </HStack>
+          </Stack>
           <HStack spacing={6} sx={{ img: { h: 16, objectFit: "contain" } }}>
             <img src="/images/netzero-pathfinders-logo.png" />
             <img src="/images/b20-brasil-logo.png" />
@@ -97,14 +97,14 @@ export default function HomeBanner() {
         </Stack> */}
       </SimpleGrid>
 
-      <Center bg="blue.1000" color="white" py={20}>
+      <Center bg="blue.1000" color="white" py={20} px={[5, 10, 16, 0]}>
         <Stack spacing={10} alignItems="flex-start">
-          <Text fontSize="2xl" fontWeight={600} maxW="58rem">
+          <Text variant="introText" maxW="58rem">
             {
               "This platform showcases best practices and innovative policies successfully implemented worldwide to tackle climate change. Drawing from the B20’s recommendations and BloombergNEF’s NetZero Pathfinders, the Hub is valuable resource for business leaders, policymakers, investors, and global stakeholders committed to addressing climate-related challenges."
             }
           </Text>
-          <Text fontSize="2xl" fontWeight={600} maxW="58rem">
+          <Text variant="introText" maxW="58rem">
             {
               "The initiative seeks to remain dynamic and continually updated with the engagement of future B20 cycles, integrating their recommendations to ensure they reflect the latest global priorities and strategies for climate action."
             }

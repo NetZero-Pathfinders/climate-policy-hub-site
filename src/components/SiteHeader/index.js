@@ -27,8 +27,8 @@ export default function SiteHeader() {
           <BinaryGrid rows={rows} color="gray.200" gridRow="1 / -1" />
         </Box>
         <HStack
-          gridColumn="2 / span 4"
-          gridRow="1 / span 2"
+          gridColumn={["1 / span 8", "2 / span 8", null, "2 / span 4"]}
+          gridRow="2 / span 2"
           bg="white"
           position="relative"
           pb={5}
@@ -46,9 +46,10 @@ export default function SiteHeader() {
             </Box>
           </Stack>
         </HStack>
-        <HStack
-          gridColumn="7 / span 10"
-          gridRow="1 / span 2"
+        <Stack
+          direction={["column", null, "row"]}
+          gridColumn={["10 / -1", "16 / -1", null, "7 / span 10"]}
+          gridRow="2 / span 2"
           bg="white"
           position="relative"
           spacing={5}
@@ -63,8 +64,9 @@ export default function SiteHeader() {
           <Link href="/about-bnef" fontWeight={600} lineHeight="shorter">
             {"About BloombergNEF"}
           </Link>
-        </HStack>
+        </Stack>
         <LinkBox
+          display={["none", null, null, "block"]}
           as="box"
           gridColumn="-5 / -1"
           gridRow="1 / span 4"

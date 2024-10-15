@@ -50,7 +50,7 @@ export default function IndexPage({ framework }) {
                 >
                   <AccordionButton py={5}>
                     <AccordionIcon mt={1.5} />
-                    <Heading lineHeight="short">{name}</Heading>
+                    <Heading variant="accordionTitle">{name}</Heading>
                   </AccordionButton>
                   <AccordionPanel>
                     <RecommendationAccordion items={items} />
@@ -88,7 +88,7 @@ function RecommendationAccordion({ items }) {
             <AccordionButton py={3}>
               <AccordionIcon />
               <Heading
-                fontSize="2xl"
+                fontSize={["lg", "xl", "2xl"]}
                 lineHeight="short"
                 fontWeight={400}
                 mt={1.5}
@@ -96,7 +96,7 @@ function RecommendationAccordion({ items }) {
               >
                 <Text
                   as="span"
-                  fontSize="md"
+                  fontSize={["sm", null, "md"]}
                   textTransform="uppercase"
                   letterSpacing="wider"
                   display="block"
@@ -129,7 +129,7 @@ function ActionAccordion({ items }) {
             <AccordionButton py={3}>
               <AccordionIcon />
               <Heading
-                fontSize="xl"
+                fontSize={["lg", "xl", "2xl"]}
                 lineHeight="short"
                 fontWeight={400}
                 mt={1.5}
@@ -137,7 +137,7 @@ function ActionAccordion({ items }) {
               >
                 <Text
                   as="span"
-                  fontSize="md"
+                  fontSize={["sm", null, "md"]}
                   textTransform="uppercase"
                   letterSpacing="wider"
                   display="block"
