@@ -178,9 +178,9 @@ function ActionAccordion({ items }) {
                             {item.title}
                           </LinkOverlay>
                         </Heading>
-                        <Text fontWeight={600} color="gray.500">
+                        {/* <Text fontWeight={600} color="gray.500">
                           {day(item.date).format("DD MMM YYYY")}
-                        </Text>
+                        </Text> */}
                       </Stack>
                     </LinkBox>
                   )

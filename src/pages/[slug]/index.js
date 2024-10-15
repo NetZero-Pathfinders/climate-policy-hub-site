@@ -34,9 +34,9 @@ export default function BestPracticePage({ slug, source, pages, tags }) {
             {frontmatter.description && (
               <Text variant="pageSubtitle">{frontmatter.description}</Text>
             )}
-            <Text fontSize="lg" fontWeight={600} color="blue.500">
+            {/* <Text fontSize="lg" fontWeight={600} color="blue.500">
               {`Updated on ${day(frontmatter.date).format("MMMM DD, YYYY")}`}
-            </Text>
+            </Text> */}
             <Wrap gridColumn="2 / span 15" spacing={3} py={3}>
               {tags.map((tag) => {
                 return (
