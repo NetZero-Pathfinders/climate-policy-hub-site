@@ -152,7 +152,7 @@ function ActionAccordion({ items }) {
             <AccordionPanel>
               <SimpleGrid
                 mt={3}
-                columns={2}
+                columns={[1, null, 2]}
                 gridGap={10}
                 borderLeft="0.5rem solid"
                 borderLeftColor="blue.500"
