@@ -40,7 +40,7 @@ export default function SiteHeader() {
         >
           <Stack spacing={0}>
             <Link href="/" fontWeight={700} lineHeight="shorter" _hover={{ textDecoration: "none", color: "blue.500" }}>
-              {"Climate Policy Hub"}
+              {"B20 Climate Policy Hub"}
             </Link>
             <Box fontWeight={600} lineHeight="shorter" color="gray.500">
               {"by BloombergNEF"}
