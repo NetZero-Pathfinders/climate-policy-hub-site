@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react"
 
 import BinaryGrid from "@/components/BinaryGrid"
-import { ButtonLink } from "@/components/Link"
+import { ButtonLink, Link } from "@/components/Link"
 
 export default function HomeBanner() {
   const rows = 8
@@ -74,9 +74,9 @@ export default function HomeBanner() {
             </ButtonLink>
           </Stack>
           <HStack spacing={6} sx={{ img: { h: 16, objectFit: "contain" } }}>
-            <img src="/images/netzero-pathfinders-logo.png" />
-            <img src="/images/b20-brasil-logo.png" />
-            <img src="/images/cni-logo.png" />
+            <Link href="https://www.netzeropathfinders.com/" target="_blank" rel="noopener noreferrer"><img src="/images/netzero-pathfinders-logo.png" /></Link>
+            <Link href="https://b20brasil.org/" target="_blank" rel="noopener noreferrer"><img src="/images/b20-brasil-logo.png" /></Link>
+            <Link href="https://b20brasil.org/" target="_blank" rel="noopener noreferrer"><img src="/images/cni-logo.png" /></Link>
           </HStack>
         </Stack>
 

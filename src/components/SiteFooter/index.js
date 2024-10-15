@@ -23,9 +23,9 @@ export default function SiteFooter() {
           sx={{ img: { h: 12, objectFit: "contain" } }}
           flexDirection={["column", null, null, "row"]}
         >
-          <img src="/images/b20-brasil-logo-inverted.png" />
-          <img src="/images/cni-logo-inverted.png" />
-          <img src="/images/bnef-logo-inverted.png" />
+          <Link href="https://b20brasil.org/" target="_blank" rel="noopener noreferrer"><img src="/images/b20-brasil-logo-inverted.png" /></Link>
+          <Link href="https://b20brasil.org/" target="_blank" rel="noopener noreferrer"><img src="/images/cni-logo-inverted.png" /></Link>
+          <Link href="https://about.bnef.com/" target="_blank" rel="noopener noreferrer"><img src="/images/bnef-logo-inverted.png" /></Link>
         </HStack>
         <Box flex={1}>
           <Text
