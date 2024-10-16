@@ -12,10 +12,11 @@ import { MDXRemote } from "next-mdx-remote"
 import getFramework from "@/utils/api/server/getFramework"
 import getPages from "@/utils/api/server/getPages"
 import getPage from "@/utils/api/server/getPage"
-import day from "dayjs"
 
 import mdxComponents from "@/components/MDXComponents"
 import CallToAction from "@/components/CallToAction"
+import { ButtonLink } from "@/components/Link"
+import { ArrowLeftIcon } from "@/components/Icon"
 
 export default function BestPracticePage({ slug, source, pages, tags }) {
   const { frontmatter } = source
@@ -27,7 +28,9 @@ export default function BestPracticePage({ slug, source, pages, tags }) {
           spacing={6}
           pt={16}
         >
-          <Stack spacing={3}>
+          <Stack spacing={10}>
+            <ButtonLink href="/" variant="ghost" color="inherit" leftIcon={<ArrowLeftIcon />} alignSelf="flex-start" _hover={{bg: "gray.100", color: "inherit" }}>{"Back to recommendations"}</ButtonLink>
+            <Stack spacing={3}>
             <Heading as="h1" variant="bestPracticeTitle">
               {frontmatter.title}
             </Heading>
@@ -67,6 +70,7 @@ export default function BestPracticePage({ slug, source, pages, tags }) {
                 )
               })}
             </Wrap>
+            </Stack>
           </Stack>
           <Stack spacing={3} pb={20}>
             <MDXRemote {...source} components={mdxComponents}>

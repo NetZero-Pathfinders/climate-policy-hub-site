@@ -16,7 +16,6 @@ import {
   HStack,
   Stack,
 } from "@chakra-ui/react"
-import day from "dayjs"
 
 import HomeBanner from "@/components/HomeBanner"
 import { LinkBox, LinkOverlay, Link } from "@/components/Link"
@@ -36,6 +35,20 @@ export default function IndexPage({ framework }) {
       <Stack spacing={20} pb={20}>
         <HomeBanner />
         <Container maxW="90rem" px={5} id="best-practices">
+          <Stack pb={10}>
+          <Heading
+            as="h2"
+            fontSize={["sm", null, "md"]}
+            textTransform="uppercase"
+            letterSpacing="wider"
+            display="block"
+            fontWeight={700}
+            mb={3}
+          >
+            {"B20 Climate Policy Hub recommendations"}
+          </Heading>
+          <Text fontSize="2xl" maxW="52rem">{"This platform showcases best practices and innovative policies successfully implemented worldwide to tackle climate change."}</Text>
+          </Stack>
           <Accordion
             allowMultiple
             borderBottom="0.0625rem solid"
