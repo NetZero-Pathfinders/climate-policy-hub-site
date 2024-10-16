@@ -50,7 +50,20 @@ export default function IndexPage({ framework }) {
                 >
                   <AccordionButton py={5}>
                     <AccordionIcon mt={1.5} />
-                    <Heading variant="accordionTitle">{name}</Heading>
+                    <Heading variant="accordionTitle">
+                      <Text
+                        as="span"
+                        fontSize={["sm", null, "md"]}
+                        textTransform="uppercase"
+                        letterSpacing="wider"
+                        display="block"
+                        fontWeight={700}
+                        mb={3}
+                      >
+                        {`Taskforce ${id[1]}`}
+                      </Text>
+                      {name}
+                    </Heading>
                   </AccordionButton>
                   <AccordionPanel>
                     <RecommendationAccordion items={items} />
@@ -222,7 +235,9 @@ function ActionAccordion({ items }) {
                     </Text>
                     <Text fontSize="lg">
                       {"Do you have a best practice to share? Email us at "}
-                      <Link href="mailto:pathfinders@bloomberg.net">{"pathfinders@bloomberg.net"}</Link>
+                      <Link href="mailto:pathfinders@bloomberg.net">
+                        {"pathfinders@bloomberg.net"}
+                      </Link>
                     </Text>
                   </Stack>
                 </LinkBox>

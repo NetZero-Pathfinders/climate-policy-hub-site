@@ -48,7 +48,6 @@ export default {
         fontSize: ["lg", "xl", "2xl"],
         letterSpacing: "tight",
         lineHeight: "tall",
-        fontWeight: 600,
       },
     },
   },

@@ -39,7 +39,7 @@ export default function SiteHeader() {
           whiteSpace="nowrap"
         >
           <Stack spacing={0}>
-            <Link href="/" fontWeight={700} lineHeight="shorter" _hover={{ textDecoration: "none", color: "blue.500" }}>
+            <Link href="/" fontSize="lg" fontWeight={700} lineHeight="shorter" _hover={{ textDecoration: "none", color: "blue.500" }}>
               {"B20 Climate Policy Hub"}
             </Link>
             <Box fontWeight={600} lineHeight="shorter" color="gray.500">
@@ -59,10 +59,10 @@ export default function SiteHeader() {
           alignItems="flex-end"
           whiteSpace="nowrap"
         >
-          <Link href="/about-b20" fontWeight={600} lineHeight="shorter">
+          <Link href="/about-b20" fontWeight={600} lineHeight="shorter" _hover={{ color: "blue.500" }}>
             {"About B20"}
           </Link>
-          <Link href="/about-bnef" fontWeight={600} lineHeight="shorter">
+          <Link href="/about-bnef" fontWeight={600} lineHeight="shorter" _hover={{ color: "blue.500" }}>
             {"About BloombergNEF"}
           </Link>
         </Stack>
@@ -71,7 +71,7 @@ export default function SiteHeader() {
           as="box"
           gridColumn="-5 / -1"
           gridRow="1 / span 4"
-          bg="blue.1000"
+          bg="blue.500"
           color="white"
           alignItems="center"
           pt={10}
