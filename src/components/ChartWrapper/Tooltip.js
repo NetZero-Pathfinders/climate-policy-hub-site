@@ -135,8 +135,9 @@ export default function Tooltip() {
                         style={{
                           verticalAlign: "top",
                           padding: "0.25rem 0 0.25rem 0.75rem",
+                          textAlign: "right",
                         }}
-                      >{`${d.y_val} ${d.unit || ""}`}</td>
+                      >{`${d.y_val} ${d.y_unit || d.unit || ""}`}</td>
                     </tr>
                   )
                 })}

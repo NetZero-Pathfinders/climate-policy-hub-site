@@ -26,7 +26,14 @@ export function processSimpleBarChart(parsed, chartColors) {
 
   const domain = {
     x: Object.keys(groupedByName),
-    y: [0, yMax],
+    // y: [0, yMax],
+    y: [
+      0,
+      Math.ceil(
+        Math.ceil(yMax / (5 * Math.pow(10, `${Math.trunc(yMax)}`.length - 2))) *
+          (5 * Math.pow(10, `${Math.trunc(yMax)}`.length - 2))
+      ),
+    ],
   }
 
   return { data, domain }
@@ -66,7 +73,16 @@ export function processStackedBarChart(parsed, colors) {
 
   const domain = {
     x: data.map((d) => d.name),
-    y: [0, y_max],
+    // y: [0, y_max],
+    y: [
+      0,
+      Math.ceil(
+        Math.ceil(
+          y_max / (5 * Math.pow(10, `${Math.trunc(y_max)}`.length - 2))
+        ) *
+          (5 * Math.pow(10, `${Math.trunc(y_max)}`.length - 2))
+      ),
+    ],
   }
 
   return { data, domain }

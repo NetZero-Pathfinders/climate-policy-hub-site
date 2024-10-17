@@ -29,7 +29,7 @@ export default function SiteHeader() {
         </Box>
         <HStack
           gridColumn={["1 / span 12", "2 / span 8", null, "2 / span 4"]}
-          gridRow="2 / span 2"
+          gridRow="1 / span 2"
           bg="white"
           position="relative"
           pb={5}
@@ -50,7 +50,7 @@ export default function SiteHeader() {
         <Stack
           direction={["column", null, "row"]}
           gridColumn={["12 / -1", "16 / -1", null, "7 / span 10"]}
-          gridRow="2 / span 2"
+          gridRow="1 / span 2"
           bg="white"
           position="relative"
           spacing={5}
