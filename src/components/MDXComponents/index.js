@@ -42,6 +42,37 @@ export const baseComponents = {
   h6: (props) => <Heading as="h6" py={6} {...props} />,
   p: (props) => <Text as="p" fontSize="xl" pb={6} {...props} />,
   a: (props) => <Link fontSize="xl" color="blue.500" textDecoration="underline" _hover={{ color: "blue.600" }} _focus={{ color: "blue.600" }} _active={{ color: "blue.600" }}{...props} />,
+  ul: (props) => {
+    return (
+      <Stack
+        as="ul"
+        spacing={2}
+        w="100%"
+        pl={6}
+        fontSize="xl"
+        lineHeight="tall"
+        gridColumn={["1 / -1", null, "2 / -3"]}
+        sx={{
+          li: { a: { color: "blue.500" } },
+        }}
+        {...props}
+      />
+    )
+  },
+  ol: (props) => {
+    return (
+      <Stack
+        as="ol"
+        spacing={5}
+        w="100%"
+        pl={6}
+        fontSize="xl"
+        lineHeight="tall"
+        gridColumn={["1 / -1", null, "2 / -3"]}
+        {...props}
+      />
+    )
+  },
 }
 
 export const bestPracticeComponents = {
