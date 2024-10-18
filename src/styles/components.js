@@ -7,7 +7,7 @@ export default {
     baseStyle: { borderRadius: "none", letterSpacing: "tight" },
   },
   Container: {
-    baseStyle: { maxW: "90rem" },
+    baseStyle: { maxW: "105rem" },
   },
   Heading: {
     baseStyle: {
