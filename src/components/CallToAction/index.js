@@ -15,7 +15,7 @@ export default function CallToAction() {
         <Stack color="white" spacing={6} gridColumn="2 / -2">
           <Text maxW="55rem" variant="bodyExtraLarge">
             {
-              "Share your best practices with us. Get in touch to get your best practice featured. Email us at "
+              "Have you seen excellent examples of innovative policy in action? Get in touch to feature your best practice at  "
             }
             <Link href="mailto:pathfinders@bloomberg.net" color="blue.500">
               {"pathfinders@bloomberg.net"}

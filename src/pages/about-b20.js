@@ -31,13 +31,13 @@ export default function AboutB20Page() {
               <Heading fontSize="5xl">{"About B20"}</Heading>
               <Text variant="pageSubtitle">
                 {
-                  "The Business 20 (B20) is the official G20 dialogue forum with the global business community. Established in 2010, the B20 is among the most prominent G20 Engagement Groups. Its working proceeding is based on Task Forces and Action Councils entrusted with key thematics that drive the priorities of each B20 edition."
+                  "The Business 20 (B20) is the official G20 dialogue forum with the global business community. Established in 2010, the B20 is among the most prominent G20 Engagement Groups. Its working proceeding is based on Taskforces and Action Councils entrusted with key thematics that drive the priorities of each B20 edition."
                 }
               </Text>
 
               <Text variant="pageSubtitle">
                 {
-                  "They are composed of around 1.000 businesses representatives from the G20 countries and from selected invited countries and international organizations. The B20 officially conveys its final recommendations to the G20 Presidency at the B20 Summit."
+                  "The B20 is composed of around 1,000 business representatives from the G20 countries, as well as from select countries and international organizations. The B20 officially conveys its final recommendations to the G20 Presidency at the B20 Summit."
                 }
               </Text>
             </Stack>
@@ -47,7 +47,7 @@ export default function AboutB20Page() {
               </Heading>
               <Text variant="bodyLarge">
                 {
-                  "To serve as a strategic platform for the business community to build consensus and set priorities on policies to address global economic challenges."
+                  "To serve as a strategic platform for the business community to build consensus and set priorities on policies that address global economic challenges."
                 }
               </Text>
             </Stack>
@@ -57,7 +57,7 @@ export default function AboutB20Page() {
               </Heading>
               <Text variant="bodyLarge">
                 {
-                  "Represent the interests of the business community in relation to the G20, foster dialogue between private and public sector at G20 level and deliver impactful and differentiated policy recommendations to the G20"
+                  "To represent the interests of the business community in relation to the G20, foster dialogue between the private and public sectors, and deliver impactful and differentiated policy recommendations to the G20."
                 }
               </Text>
             </Stack>
@@ -72,7 +72,7 @@ export default function AboutB20Page() {
               </Text>
               <Text variant="bodyLarge">
                 {
-                  "The theme “Inclusive Growth for a Sustainable Future” will serve as the guiding principle for B20 Brazil’s endeavors. This theme covers 5 pillars that make up the B20 Brazil Guiding Claim and will steer the discussions of the Task Forces and the Action Council:"
+                  "The theme “Inclusive Growth for a Sustainable Future” will serve as the guiding principle for B20 Brazil’s endeavors. This theme covers 5 pillars that make up the B20 Brazil Guiding Claim and will steer the discussions of the Taskforces and the Action Council:"
                 }
               </Text>
             </Stack>
