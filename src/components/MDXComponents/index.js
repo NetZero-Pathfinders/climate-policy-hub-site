@@ -60,7 +60,6 @@ export const baseComponents = {
     />
   ),
   img: (props) => {
-    console.log(props)
     return <img src={props.src} />
     // return <img src={props.src.split(".").join("-md.")} />
   },
