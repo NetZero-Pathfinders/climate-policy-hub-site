@@ -91,6 +91,13 @@ export default function HomeBanner() {
           </Stack>
           <HStack spacing={6} sx={{ img: { h: 16, objectFit: "contain" } }}>
             <Link
+              href="https://about.bnef.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/bnef-logo.png" />
+            </Link>
+            <Link
               href="https://www.netzeropathfinders.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -105,11 +112,18 @@ export default function HomeBanner() {
               <img src="/images/b20-brasil-logo.png" />
             </Link>
             <Link
-              href="https://b20brasil.org/"
+              href="https://www.portaldaindustria.com.br/cni/en/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="/images/cni-logo.png" />
+            </Link>
+            <Link
+              href="https://b20brazil.org/b20-secretariat#:~:text=The%20Secretariat%20for%20B20%20Brazil,hub%20for%20coordination%20and%20communication"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/secretariat-logo.png" />
             </Link>
           </HStack>
         </Stack>
