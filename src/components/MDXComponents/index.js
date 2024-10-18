@@ -43,10 +43,10 @@ function ChartContainer(props) {
 export const baseComponents = {
   h1: (props) => <Heading as="h1" py={6} {...props} />,
   h2: (props) => <Heading as="h2" variant="heading2" py={6} {...props} />,
-  h3: (props) => <Heading as="h3" py={6} {...props} />,
-  h4: (props) => <Heading as="h4" py={6} {...props} />,
-  h5: (props) => <Heading as="h5" py={6} {...props} />,
-  h6: (props) => <Heading as="h6" py={6} {...props} />,
+  h3: (props) => <Heading as="h3" variant="heading3" py={6} {...props} />,
+  h4: (props) => <Heading as="h4" variant="heading4" py={6} {...props} />,
+  h5: (props) => <Heading as="h5" variant="heading4" py={6} {...props} />,
+  h6: (props) => <Heading as="h6" variant="heading4" py={6} {...props} />,
   p: (props) => <Text as="p" fontSize="xl" pb={6} {...props} />,
   a: (props) => (
     <Link
@@ -61,7 +61,7 @@ export const baseComponents = {
   ),
   img: (props) => {
     console.log(props)
-    return null
+    return <img src={props.src} />
     // return <img src={props.src.split(".").join("-md.")} />
   },
   ul: (props) => {

@@ -26,6 +26,16 @@ export default {
         letterSpacing: "tight",
         lineHeight: "shorter",
       },
+      heading3: {
+        fontSize: ["xl", "2xl", "3xl"],
+        letterSpacing: "tight",
+        lineHeight: "shorter",
+      },
+      heading4: {
+        fontSize: ["lg", "xl", "2xl"],
+        letterSpacing: "tight",
+        lineHeight: "shorter",
+      },
       accordionTitle: {
         fontSize: ["xl", "2xl", "3xl", "4xl"],
         letterSpacing: "tight",
