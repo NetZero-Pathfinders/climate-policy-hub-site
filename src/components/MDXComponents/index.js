@@ -1,5 +1,12 @@
-import { Heading, Text, Box, Stack, SimpleGrid, background } from "@chakra-ui/react"
-import { Link } from "@/components/Link" 
+import {
+  Heading,
+  Text,
+  Box,
+  Stack,
+  SimpleGrid,
+  background,
+} from "@chakra-ui/react"
+import { Link } from "@/components/Link"
 import ChartWrapper from "@/components/ChartWrapper"
 
 function ChartContainer(props) {
@@ -41,7 +48,22 @@ export const baseComponents = {
   h5: (props) => <Heading as="h5" py={6} {...props} />,
   h6: (props) => <Heading as="h6" py={6} {...props} />,
   p: (props) => <Text as="p" fontSize="xl" pb={6} {...props} />,
-  a: (props) => <Link fontSize="xl" color="blue.500" textDecoration="underline" _hover={{ color: "blue.600" }} _focus={{ color: "blue.600" }} _active={{ color: "blue.600" }}{...props} />,
+  a: (props) => (
+    <Link
+      fontSize="xl"
+      color="blue.500"
+      textDecoration="underline"
+      _hover={{ color: "blue.600" }}
+      _focus={{ color: "blue.600" }}
+      _active={{ color: "blue.600" }}
+      {...props}
+    />
+  ),
+  img: (props) => {
+    console.log(props)
+    return null
+    // return <img src={props.src.split(".").join("-md.")} />
+  },
   ul: (props) => {
     return (
       <Stack
