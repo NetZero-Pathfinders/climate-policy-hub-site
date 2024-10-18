@@ -80,7 +80,7 @@ export default function SiteHeader() {
           position="relative"
           textAlign="center"
           cursor="pointer"
-          _hover={{ color: "blue.500" }}
+          _hover={{ bg: "blue.600" }}
         >
           <Center flex={1}>
             <Box
