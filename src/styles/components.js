@@ -6,23 +6,30 @@ export default {
   Button: {
     baseStyle: { borderRadius: "none", letterSpacing: "tight" },
   },
+  Container: {
+    baseStyle: { maxW: "90rem" },
+  },
   Heading: {
-    baseStyle: { letterSpacing: "tight", lineHeight: "shorter", fontWeight: 700, },
+    baseStyle: {
+      letterSpacing: "tight",
+      lineHeight: "shorter",
+      fontWeight: 700,
+    },
     variants: {
       bestPracticeTitle: {
         fontSize: ["3xl", "4xl", "5xl", "6xl"],
         letterSpacing: "tight",
-        lineHeight: "shorter"
+        lineHeight: "shorter",
       },
       heading2: {
         fontSize: ["2xl", "3xl", "4xl"],
         letterSpacing: "tight",
-        lineHeight: "shorter"
+        lineHeight: "shorter",
       },
       accordionTitle: {
-        fontSize: ["xl","2xl", "3xl", "4xl"],
+        fontSize: ["xl", "2xl", "3xl", "4xl"],
         letterSpacing: "tight",
-        lineHeight: "short"
+        lineHeight: "short",
       },
     },
   },
@@ -36,7 +43,7 @@ export default {
       bodyLarge: {
         fontSize: "xl",
         letterSpacing: "tight",
-        lineHeight: "tall"
+        lineHeight: "tall",
       },
       bodyExtraLarge: {
         fontSize: ["2xl", null, "3xl", "4xl"],

@@ -22,17 +22,16 @@ export function processSimpleBarChart(parsed, chartColors) {
   }))
 
   const groupedByName = _groupBy(data, (o) => o.name)
-  const yMax = max(data, (o) => o.value)
+  const y_max = max(data, (o) => o.value)
+  const y_max_factor = Math.pow(10, `${Math.trunc(yMax)}`.length - 1)
+  const divider = 2
 
   const domain = {
     x: Object.keys(groupedByName),
     // y: [0, yMax],
     y: [
       0,
-      Math.ceil(
-        Math.ceil(yMax / (5 * Math.pow(10, `${Math.trunc(yMax)}`.length - 2))) *
-          (5 * Math.pow(10, `${Math.trunc(yMax)}`.length - 2))
-      ),
+      (Math.ceil((y_max / y_max_factor) * divider) / divider) * y_max_factor,
     ],
   }
 
@@ -70,18 +69,14 @@ export function processStackedBarChart(parsed, colors) {
     })
 
   const y_max = max(data, (o) => o.sum)
+  const y_max_factor = Math.pow(10, `${Math.trunc(y_max)}`.length - 1)
+  const divider = 2
 
   const domain = {
     x: data.map((d) => d.name),
-    // y: [0, y_max],
     y: [
       0,
-      Math.ceil(
-        Math.ceil(
-          y_max / (5 * Math.pow(10, `${Math.trunc(y_max)}`.length - 2))
-        ) *
-          (5 * Math.pow(10, `${Math.trunc(y_max)}`.length - 2))
-      ),
+      (Math.ceil((y_max / y_max_factor) * divider) / divider) * y_max_factor,
     ],
   }
 

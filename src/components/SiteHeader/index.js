@@ -7,16 +7,16 @@ import {
   Container,
   SimpleGrid,
   textDecoration,
+  Grid,
 } from "@chakra-ui/react"
 
 import { LinkOverlay, LinkBox, Link } from "@/components/Link"
 import BinaryGrid from "@/components/BinaryGrid"
 
-
 export default function SiteHeader() {
   const rows = 4
   return (
-    <Container maxW="none" px={0}>
+    <Container px={0}>
       <SimpleGrid
         columns={24}
         gridTemplateRows={`repeat(${rows}, 1fr)`}
@@ -28,18 +28,30 @@ export default function SiteHeader() {
           <BinaryGrid rows={rows} color="gray.200" gridRow="1 / -1" />
         </Box>
         <HStack
-          gridColumn={["1 / span 12", "2 / span 8", null, "2 / span 4"]}
-          gridRow="1 / span 2"
+          gridColumn={[
+            "1 / span 12",
+            "2 / span 11",
+            "2 / span 7",
+            null,
+            "2 / span 5",
+          ]}
+          gridRow={["1 / -1", null, "1 / span 2"]}
           bg="white"
           position="relative"
-          pb={5}
-          pl={5}
+          pb={[2, null, null, 5]}
+          pl={[2, null, null, 5]}
           spacing={5}
           alignItems="flex-end"
           whiteSpace="nowrap"
         >
           <Stack spacing={0}>
-            <Link href="/" fontSize="lg" fontWeight={700} lineHeight="shorter" _hover={{ textDecoration: "none", color: "blue.500" }}>
+            <Link
+              href="/"
+              fontSize="lg"
+              fontWeight={700}
+              lineHeight="shorter"
+              _hover={{ textDecoration: "none", color: "blue.500" }}
+            >
               {"B20 Climate Policy Hub"}
             </Link>
             <Box fontWeight={600} lineHeight="shorter" color="gray.500">
@@ -48,41 +60,46 @@ export default function SiteHeader() {
           </Stack>
         </HStack>
         <Stack
-          direction={["column", null, "row"]}
-          gridColumn={["12 / -1", "16 / -1", null, "7 / span 10"]}
-          gridRow="1 / span 2"
+          direction={["column", "row"]}
+          gridColumn={["13 / -1", null, null, "-9 / -1", "9 / span 8"]}
+          gridRow={["1 / -1", null, null, null, "1 / span 2"]}
           bg="white"
           position="relative"
-          spacing={5}
-          px={5}
-          pb={5}
+          spacing={[2, 5]}
+          px={[2, null, null, 5]}
+          pb={[2, null, null, 5]}
           alignItems="flex-end"
           whiteSpace="nowrap"
         >
-          <Link href="/about-b20" fontWeight={600} lineHeight="shorter" _hover={{ color: "blue.500" }}>
+          <Link
+            href="/about-b20"
+            fontWeight={600}
+            lineHeight="shorter"
+            _hover={{ color: "blue.500" }}
+          >
             {"About B20"}
           </Link>
-          <Link href="/about-bnef" fontWeight={600} lineHeight="shorter" _hover={{ color: "blue.500" }}>
+          <Link
+            href="/about-bnef"
+            fontWeight={600}
+            lineHeight="shorter"
+            _hover={{ color: "blue.500" }}
+          >
             {"About BloombergNEF"}
           </Link>
         </Stack>
         <LinkBox
-          display={["none", null, null, "block"]}
-          as="box"
+          display={["none", null, null, null, "flex"]}
+          as={Center}
           gridColumn="-5 / -1"
           gridRow="1 / span 4"
           bg="blue.500"
           color="white"
-          alignItems="center"
-          pt={10}
-          pb={10}
-          px={5}
           position="relative"
-          textAlign="center"
           cursor="pointer"
           _hover={{ bg: "blue.600" }}
         >
-          <Center flex={1}>
+          <Stack spacing={0} alignItems="center">
             <Box
               w={[10, null, null, 16, 28]}
               h={[10, null, null, 16, 28]}
@@ -107,10 +124,15 @@ export default function SiteHeader() {
                 <path d="M88.75 108.75C90.8211 108.75 92.5 107.071 92.5 105C92.5 102.929 90.8211 101.25 88.75 101.25C86.6789 101.25 85 102.929 85 105C85 107.071 86.6789 108.75 88.75 108.75Z" />
               </svg>
             </Box>
-          </Center>
-          <LinkOverlay href="mailto:pathfinders@bloomberg.net" fontSize="lg" fontWeight={600} lineHeight="shorter">
-            {"Share a best practice"}
-          </LinkOverlay>
+            <LinkOverlay
+              href="mailto:pathfinders@bloomberg.net"
+              fontSize="lg"
+              fontWeight={600}
+              lineHeight="shorter"
+            >
+              {"Share a best practice"}
+            </LinkOverlay>
+          </Stack>
         </LinkBox>
       </SimpleGrid>
     </Container>

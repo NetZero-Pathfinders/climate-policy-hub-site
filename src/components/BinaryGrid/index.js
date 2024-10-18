@@ -62,11 +62,12 @@ export default function BinaryGrid({ columns = 14, rows = 4, ...props }) {
       `calc((${width}px - (5 * 0.0625rem)) / 6)`
     )
     ref.current.style.setProperty("opacity", 1)
+    ref.current.style.removeProperty("aspect-ratio")
   }, 300)
 
   useResizeObserver({ ref, onResize, box: "border-box" })
 
-  // const totalColumnCount = smColumns + mdColumns * 2 + lgColumns * 4
+  const totalColumnCount = smColumns + mdColumns * 2 + lgColumns * 4
 
   return (
     <Grid
@@ -76,9 +77,10 @@ export default function BinaryGrid({ columns = 14, rows = 4, ...props }) {
       color="gray.300"
       gridTemplateColumns={backgroundGridColumns}
       gridTemplateRows={backgroundGridRows}
+      boxShadow="inset -0.0625rem 0 0 0 var(--chakra-colors-gray-200), inset 0.0625rem 0 0 0 var(--chakra-colors-gray-200)"
       style={{
         opacity: 0,
-        // aspectRatio: totalColumnCount / rows,
+        aspectRatio: totalColumnCount / rows,
       }}
       {...props}
     >

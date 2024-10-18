@@ -16,30 +16,46 @@ import { ButtonLink, Link } from "@/components/Link"
 export default function HomeBanner() {
   const rows = 8
   return (
-    <Container maxW="none" px={0}>
+    <Container px={0}>
       <SimpleGrid
         columns={24}
         gridTemplateRows={`repeat(${rows}, 1fr)`}
         gridGap="0.0625rem"
+        mb={10}
       >
-        <Box gridColumn="1 / -1" gridRow="1 / -1">
+        <Box gridColumn="1 / -1" gridRow="1 / -1" position="relative">
           <BinaryGrid rows={rows} color="gray.200" gridRow="1 / -1" />
+          <Box
+            position="absolute"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            bgGradient="linear(to-b, rgba(255,255,255,0), rgba(255,255,255,1))"
+          />
         </Box>
         <Stack
-          p={5}
-          gridColumn={["1 / -1", "2 / -2", null, "2 / span 15"]}
+          p={[2, null, null, 5]}
+          gridColumn={["1 / -1", "2 / -5", null, "2 / span 15"]}
           gridRow={["1 / span 8", null, null, null, "1 / span 8"]}
           bg="white"
           spacing={10}
           position="relative"
           overflow="hidden"
         >
-          <Heading fontSize={["2xl", "3xl", null, "4xl"]} letterSpacing="tighter">
+          <Heading
+            fontSize={["2xl", "3xl", null, "4xl"]}
+            letterSpacing="tighter"
+          >
             {
               "The B20 Climate Policy Hub, in partnership with BloombergNEF, aims to help governments and companies to accelerate the transition to a low-carbon economy"
             }
           </Heading>
-          <Stack spacing={3} direction={["column", null, "row"]}>
+          <Stack
+            spacing={3}
+            direction={["column", "row"]}
+            alignItems={["flex-start", "center"]}
+          >
             <ButtonLink
               href="mailto:pathfinders@bloomberg.net"
               size="lg"
@@ -74,9 +90,27 @@ export default function HomeBanner() {
             </ButtonLink>
           </Stack>
           <HStack spacing={6} sx={{ img: { h: 16, objectFit: "contain" } }}>
-            <Link href="https://www.netzeropathfinders.com/" target="_blank" rel="noopener noreferrer"><img src="/images/netzero-pathfinders-logo.png" /></Link>
-            <Link href="https://b20brasil.org/" target="_blank" rel="noopener noreferrer"><img src="/images/b20-brasil-logo.png" /></Link>
-            <Link href="https://b20brasil.org/" target="_blank" rel="noopener noreferrer"><img src="/images/cni-logo.png" /></Link>
+            <Link
+              href="https://www.netzeropathfinders.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/netzero-pathfinders-logo.png" />
+            </Link>
+            <Link
+              href="https://b20brasil.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/b20-brasil-logo.png" />
+            </Link>
+            <Link
+              href="https://b20brasil.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/cni-logo.png" />
+            </Link>
           </HStack>
         </Stack>
 
@@ -97,14 +131,24 @@ export default function HomeBanner() {
         </Stack> */}
       </SimpleGrid>
 
-      <Center bg="blue.1000" color="white" py={20} px={[5, 10, 16, 0]}>
-        <Stack spacing={10} alignItems="flex-start">
-          <Text variant="introText" maxW="58rem">
+      <SimpleGrid
+        columns={24}
+        gridGap="0.0625rem"
+        bg="blue.1000"
+        color="white"
+        py={20}
+      >
+        <Stack
+          spacing={10}
+          alignItems="flex-start"
+          gridColumn={["2 / -2", null, null, "5 / -5"]}
+        >
+          <Text variant="introText">
             {
               "This platform showcases best practices and innovative policies successfully implemented worldwide to tackle climate change. Drawing from the B20’s recommendations and BloombergNEF’s NetZero Pathfinders, the Hub is valuable resource for business leaders, policymakers, investors, and global stakeholders committed to addressing climate-related challenges."
             }
           </Text>
-          <Text variant="introText" maxW="58rem">
+          <Text variant="introText">
             {
               "The initiative seeks to remain dynamic and continually updated with the engagement of future B20 cycles, integrating their recommendations to ensure they reflect the latest global priorities and strategies for climate action."
             }
@@ -134,7 +178,7 @@ export default function HomeBanner() {
             {"Share a best practice"}
           </ButtonLink>
         </Stack>
-      </Center>
+      </SimpleGrid>
     </Container>
   )
 }

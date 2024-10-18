@@ -34,59 +34,66 @@ export default function IndexPage({ framework }) {
 
       <Stack spacing={20} pb={20}>
         <HomeBanner />
-        <Container maxW="90rem" px={5} id="best-practices">
-          <Stack pb={10}>
-          <Heading
-            as="h2"
-            fontSize={["sm", null, "md"]}
-            textTransform="uppercase"
-            letterSpacing="wider"
-            display="block"
-            fontWeight={700}
-            mb={3}
-          >
-            {"B20 Climate Policy Hub recommendations"}
-          </Heading>
-          <Text fontSize="2xl" maxW="52rem">{"This platform showcases best practices and innovative policies successfully implemented worldwide to tackle climate change."}</Text>
-          </Stack>
-          <Accordion
-            allowMultiple
-            borderBottom="0.0625rem solid"
-            borderBottomColor="gray.200"
-          >
-            {framework.map(({ id, name, items }) => {
-              const accentColor = colors.green[500]
-              return (
-                <AccordionItem
-                  key={id}
-                  style={{ "--accent-color": accentColor }}
-                >
-                  <AccordionButton py={5}>
-                    <AccordionIcon mt={1.5} />
-                    <Heading variant="accordionTitle">
-                      <Text
-                        as="span"
-                        fontSize={["sm", null, "md"]}
-                        textTransform="uppercase"
-                        letterSpacing="wider"
-                        display="block"
-                        fontWeight={700}
-                        mb={3}
-                      >
-                        {`Taskforce ${id[1]}`}
-                      </Text>
-                      {name}
-                    </Heading>
-                  </AccordionButton>
-                  <AccordionPanel>
-                    <RecommendationAccordion items={items} />
-                  </AccordionPanel>
-                </AccordionItem>
-              )
-            })}
-          </Accordion>
+        <Container px={0} id="best-practices" pt={10} mt={-10}>
+          <SimpleGrid columns={24} gridGap="0.0625rem">
+            <Stack gridColumn="2 / -2">
+              <Heading
+                as="h2"
+                fontSize={["sm", null, "md"]}
+                textTransform="uppercase"
+                letterSpacing="wider"
+                display="block"
+                fontWeight={700}
+                mb={3}
+              >
+                {"B20 Climate Policy Hub recommendations"}
+              </Heading>
+              <Text fontSize="2xl" maxW="52rem">
+                {
+                  "This platform showcases best practices and innovative policies successfully implemented worldwide to tackle climate change."
+                }
+              </Text>
+            </Stack>
+            <Accordion
+              allowMultiple
+              borderBottom="0.0625rem solid"
+              borderBottomColor="gray.200"
+              gridColumn="2 / -2"
+              pb={3}
+            >
+              {framework.map(({ id, name, items }) => {
+                const accentColor = colors.green[500]
+                return (
+                  <AccordionItem
+                    key={id}
+                    style={{ "--accent-color": accentColor }}
+                  >
+                    <AccordionButton py={5}>
+                      <AccordionIcon mt={1.5} />
+                      <Heading variant="accordionTitle">
+                        <Text
+                          as="span"
+                          fontSize={["sm", null, "md"]}
+                          textTransform="uppercase"
+                          letterSpacing="wider"
+                          display="block"
+                          fontWeight={700}
+                          mb={3}
+                        >
+                          {`Taskforce ${id[1]}`}
+                        </Text>
+                        {name}
+                      </Heading>
+                    </AccordionButton>
+                    <AccordionPanel>
+                      <RecommendationAccordion items={items} />
+                    </AccordionPanel>
+                  </AccordionItem>
+                )
+              })}
+            </Accordion>
+          </SimpleGrid>
         </Container>
-
         <CallToAction />
       </Stack>
     </>

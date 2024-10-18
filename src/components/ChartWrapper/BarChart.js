@@ -53,7 +53,7 @@ export default function BarChart({ orientation, chartPadding = {} }) {
     top: orientation === "horizontal" ? 20 : 20,
     left: orientation === "horizontal" ? 24 : 120,
     right: orientation === "horizontal" ? 0 : 8,
-    bottom: orientation === "horizontal" ? 96 : 0,
+    bottom: orientation === "horizontal" ? 32 : 0,
     ...chartPadding,
   }
 
@@ -163,7 +163,7 @@ export default function BarChart({ orientation, chartPadding = {} }) {
 function YAxis({ orientation, width, xScale, yScale, fontSize = 12 }) {
   const unit = useChartStore((state) => state.unit)
   const y_unit = useChartStore((state) => state.y_unit)
-  const ticks = yScale.ticks(5)
+  const ticks = yScale.ticks()
   const yAxisLabel = unit || y_unit || ""
   return (
     <g>
