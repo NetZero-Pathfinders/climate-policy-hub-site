@@ -36,7 +36,7 @@ export default function IndexPage({ framework }) {
         <HomeBanner />
         <Container px={0} id="best-practices" pt={10} mt={-10}>
           <SimpleGrid columns={24} gridGap="0.0625rem">
-            <Stack gridColumn="2 / -2">
+            <Stack gridColumn="2 / -2" pb={10}>
               <Heading
                 as="h2"
                 fontSize={["sm", null, "md"]}
@@ -48,7 +48,7 @@ export default function IndexPage({ framework }) {
               >
                 {"B20 Climate Policy Hub recommendations"}
               </Heading>
-              <Text fontSize="2xl" maxW="52rem">
+              <Text variant="bodyLarge" maxW="52rem">
                 {
                   "This platform showcases best practices and innovative policies successfully implemented worldwide to tackle climate change."
                 }

@@ -47,11 +47,14 @@ export const baseComponents = {
   h4: (props) => <Heading as="h4" variant="heading4" py={6} {...props} />,
   h5: (props) => <Heading as="h5" variant="heading4" py={6} {...props} />,
   h6: (props) => <Heading as="h6" variant="heading4" py={6} {...props} />,
-  p: (props) => <Text as="p" fontSize="xl" pb={6} {...props} />,
+  p: (props) => <Text as="p" variant="bodyLarge" pb={6} {...props} />,
   a: (props) => (
     <Link
-      fontSize="xl"
+      fontSize={["xl", null, null, "2xl"]}
+      letterSpacing="tight"
+      lineHeight="tall"
       color="blue.500"
+      fontWeight={600}
       textDecoration="underline"
       _hover={{ color: "blue.600" }}
       _focus={{ color: "blue.600" }}
@@ -70,7 +73,9 @@ export const baseComponents = {
         spacing={2}
         w="100%"
         pl={6}
-        fontSize="xl"
+        pb={6}
+        fontSize={["xl", null, null, "2xl"]}
+        letterSpacing="tight"
         lineHeight="tall"
         gridColumn={["1 / -1", null, "2 / -3"]}
         sx={{
@@ -87,9 +92,14 @@ export const baseComponents = {
         spacing={5}
         w="100%"
         pl={6}
-        fontSize="xl"
+        pb={6}
+        fontSize={["xl", null, null, "2xl"]}
+        letterSpacing="tight"
         lineHeight="tall"
         gridColumn={["1 / -1", null, "2 / -3"]}
+        sx={{
+          li: { a: { color: "blue.500" } },
+        }}
         {...props}
       />
     )
@@ -123,7 +133,7 @@ export const bestPracticeComponents = {
         py={[0, null, null, 6]}
         {...restProps}
       >
-        <Heading as="h3" fontSize="3xl" lineHeight="shorter" color="blue.500">
+        <Heading as="h3" fontSize="4xl" lineHeight="shorter" color="blue.500">
           {title}
         </Heading>
         <Text

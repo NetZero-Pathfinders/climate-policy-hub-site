@@ -47,11 +47,11 @@ export default {
     baseStyle: { letterSpacing: "tight", lineHeight: "tall" },
     variants: {
       pageSubtitle: {
-        fontSize: ["xl", "null", "null", "2xl"],
+        fontSize: ["xl", "null", "2xl", "3xl"],
         letterSpacing: "tight",
       },
       bodyLarge: {
-        fontSize: "xl",
+        fontSize: ["xl", null, null, "2xl"],
         letterSpacing: "tight",
         lineHeight: "tall",
       },
@@ -62,7 +62,7 @@ export default {
         fontWeight: 600,
       },
       introText: {
-        fontSize: ["lg", "xl", "2xl"],
+        fontSize: ["xl", null, null, "2xl"],
         letterSpacing: "tight",
         lineHeight: "tall",
       },
