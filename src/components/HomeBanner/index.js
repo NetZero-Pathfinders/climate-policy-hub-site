@@ -1,13 +1,11 @@
 import {
   Box,
   HStack,
-  Center,
   Stack,
   Container,
   SimpleGrid,
   Heading,
   Text,
-  Button,
 } from "@chakra-ui/react"
 
 import BinaryGrid from "@/components/BinaryGrid"
@@ -53,12 +51,13 @@ export default function HomeBanner() {
           </Heading>
           <Stack
             spacing={3}
-            direction={["column", "row"]}
-            alignItems={["flex-start", "center"]}
+            direction={["column", null, "row"]}
+            alignItems={["flex-start", null, "center"]}
           >
             <ButtonLink
               href="mailto:pathfinders@bloomberg.net"
               size="lg"
+              w={["100%", null, "auto"]}
               leftIcon={
                 <svg
                   viewBox="0 0 120 120"
@@ -85,6 +84,7 @@ export default function HomeBanner() {
               colorScheme="gray"
               variant="ghost"
               href="#best-practices"
+              w={["100%", null, "auto"]}
             >
               {"See best practices"}
             </ButtonLink>

@@ -1,4 +1,3 @@
-import { forwardRef } from "react"
 import {
   Box,
   HStack,
@@ -6,23 +5,141 @@ import {
   Stack,
   Container,
   SimpleGrid,
-  textDecoration,
-  Grid,
+  Button,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react"
 
-import { LinkOverlay, LinkBox, Link } from "@/components/Link"
+import { LinkOverlay, LinkBox, ButtonLink, Link } from "@/components/Link"
 import BinaryGrid from "@/components/BinaryGrid"
+import { MenuIcon } from "@/components/Icon"
+
+function Navigation() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <HStack
+      gridColumn={["13 / -1", "-5 / -1", null, "-9 / -1", "9 / span 8"]}
+      gridRow={["1 / -1", null, null, null, "1 / span 2"]}
+      bg={["transparent", null, null, "white"]}
+      position="relative"
+      spacing={[2, 5]}
+      px={[2, null, null, 5]}
+      pb={[2, null, null, 5]}
+      pt={[2, null, 2, 0]}
+      alignItems={["center", null, null, "flex-end"]}
+      justifyContent={["center", null, null, "flex-start"]}
+      whiteSpace="nowrap"
+      my={[5, null, null, 0]}
+    >
+      <Link
+        href="/about-b20"
+        fontWeight={600}
+        lineHeight="shorter"
+        _hover={{ color: "blue.500" }}
+        display={["none", null, null, "block"]}
+      >
+        {"About B20"}
+      </Link>
+      <Link
+        href="/about-bnef"
+        fontWeight={600}
+        lineHeight="shorter"
+        _hover={{ color: "blue.500" }}
+        display={["none", null, null, "block"]}
+      >
+        {"About BloombergNEF"}
+      </Link>
+      <Button
+        display={["inline-flex", null, null, "none"]}
+        px={0}
+        onClick={onOpen}
+      >
+        <MenuIcon />
+      </Button>
+      <Drawer isOpen={isOpen} onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent bg="black" color="white">
+          <DrawerHeader>
+            <DrawerCloseButton />
+          </DrawerHeader>
+          <DrawerBody px={0}>
+            <Stack spacing={2}>
+              <ButtonLink
+                href="/about-b20"
+                variant="ghost"
+                colorScheme="gray"
+                justifyContent="flex-start"
+                px={5}
+                color="white"
+                _hover={{ bg: "gray.900" }}
+                _focusVisible={{ bg: "gray.900" }}
+                _active={{ bg: "gray.800" }}
+                onClick={onClose}
+              >
+                {"About B20"}
+              </ButtonLink>
+              <ButtonLink
+                href="/about-bnef"
+                variant="ghost"
+                colorScheme="gray"
+                justifyContent="flex-start"
+                px={5}
+                color="white"
+                _hover={{ bg: "gray.900" }}
+                _focusVisible={{ bg: "gray.900" }}
+                _active={{ bg: "gray.800" }}
+                onClick={onClose}
+              >
+                {"About BloombergNEF"}
+              </ButtonLink>
+            </Stack>
+          </DrawerBody>
+          <DrawerFooter>
+            <ButtonLink
+              href="mailto:pathfinders@bloomberg.net"
+              w="100%"
+              leftIcon={
+                <svg
+                  viewBox="0 0 120 120"
+                  fill="none"
+                  stroke="currentcolor"
+                  strokeWidth={2}
+                  style={{ width: "1.5rem", height: "1.5rem" }}
+                >
+                  <path
+                    vectorEffect="non-scaling-stroke"
+                    d="M20 20H100C105.5 20 110 24.5 110 30V90C110 95.5 105.5 100 100 100H20C14.5 100 10 95.5 10 90V30C10 24.5 14.5 20 20 20Z"
+                  />
+                  <path
+                    vectorEffect="non-scaling-stroke"
+                    d="M110 30L60 65L10 30"
+                  />
+                </svg>
+              }
+            >
+              {"Share a best practice"}
+            </ButtonLink>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </HStack>
+  )
+}
 
 export default function SiteHeader() {
   const rows = 4
   return (
-    <Container px={0}>
+    <Container px={0} zIndex={1} position="relative">
       <SimpleGrid
         columns={24}
         gridTemplateRows={`repeat(${rows}, 1fr)`}
         gridGap="0.0625rem"
-        borderBottom="0.0625rem solid"
-        borderBottomColor="gray.200"
       >
         <Box gridColumn="1 / -1" gridRow="1 / -1">
           <BinaryGrid rows={rows} color="gray.200" gridRow="1 / -1" />
@@ -39,9 +156,10 @@ export default function SiteHeader() {
           bg="white"
           position="relative"
           pb={[2, null, null, 5]}
+          pt={[2, null, null, 0]}
           pl={[2, null, null, 5]}
           spacing={5}
-          alignItems="flex-end"
+          alignItems={["center", null, null, "flex-end"]}
           whiteSpace="nowrap"
         >
           <Stack spacing={0}>
@@ -59,35 +177,7 @@ export default function SiteHeader() {
             </Box>
           </Stack>
         </HStack>
-        <Stack
-          direction={["column", "row"]}
-          gridColumn={["13 / -1", null, null, "-9 / -1", "9 / span 8"]}
-          gridRow={["1 / -1", null, null, null, "1 / span 2"]}
-          bg="white"
-          position="relative"
-          spacing={[2, 5]}
-          px={[2, null, null, 5]}
-          pb={[2, null, null, 5]}
-          alignItems="flex-end"
-          whiteSpace="nowrap"
-        >
-          <Link
-            href="/about-b20"
-            fontWeight={600}
-            lineHeight="shorter"
-            _hover={{ color: "blue.500" }}
-          >
-            {"About B20"}
-          </Link>
-          <Link
-            href="/about-bnef"
-            fontWeight={600}
-            lineHeight="shorter"
-            _hover={{ color: "blue.500" }}
-          >
-            {"About BloombergNEF"}
-          </Link>
-        </Stack>
+        <Navigation />
         <LinkBox
           display={["none", null, null, null, "flex"]}
           as={Center}

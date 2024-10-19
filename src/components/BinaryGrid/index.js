@@ -38,9 +38,9 @@ export default function BinaryGrid({ columns = 14, rows = 4, ...props }) {
     transformOrigin: "left",
   }
 
-  const transitionConfig = { duration: 1, bounce: 0, type: "spring" }
+  const transitionConfig = { duration: 0, bounce: 0, type: "spring" }
 
-  const delay = 0.03
+  // const delay = 0.03
 
   const ref = useRef(null)
 
@@ -72,12 +72,13 @@ export default function BinaryGrid({ columns = 14, rows = 4, ...props }) {
   return (
     <Grid
       ref={ref}
+      display={["none", null, "grid"]}
       gridColumn="1 / -1"
       bg="white"
       color="gray.300"
       gridTemplateColumns={backgroundGridColumns}
       gridTemplateRows={backgroundGridRows}
-      boxShadow="inset -0.0625rem 0 0 0 var(--chakra-colors-gray-200), inset 0.0625rem 0 0 0 var(--chakra-colors-gray-200)"
+      boxShadow="inset -0.0625rem 0 0 0 var(--chakra-colors-gray-200), inset 0.0625rem 0 0 0 var(--chakra-colors-gray-200), 0 0.0625rem 0 0 var(--chakra-colors-gray-200)"
       style={{
         opacity: 0,
         aspectRatio: totalColumnCount / rows,
@@ -90,7 +91,10 @@ export default function BinaryGrid({ columns = 14, rows = 4, ...props }) {
             key={col}
             style={{ ...baseStyleY, gridColumnStart: `${(col + 1) * 2}` }}
             animate={{ scaleY: [0, 1] }}
-            transition={{ ...transitionConfig, delay: col * delay }}
+            transition={{
+              ...transitionConfig,
+              // delay: col * delay,
+            }}
           />
         )
       })}
@@ -112,7 +116,10 @@ export default function BinaryGrid({ columns = 14, rows = 4, ...props }) {
               }`,
             }}
             animate={{ scaleX: [0, 1] }}
-            transition={{ ...transitionConfig, delay: row * delay }}
+            transition={{
+              ...transitionConfig,
+              // delay: row * delay,
+            }}
           />
         )
       })}

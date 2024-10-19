@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "clean": "rm -Rf out && rm -Rf .next",
     "develop": "npm run prepareFramework && next dev",
     "build": "next build",
     "start": "next start",
