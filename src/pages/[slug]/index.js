@@ -14,6 +14,7 @@ import getFramework from "@/utils/api/server/getFramework"
 import getPages from "@/utils/api/server/getPages"
 import getPage from "@/utils/api/server/getPage"
 
+import SEO from "@/components/SEO"
 import mdxComponents from "@/components/MDXComponents"
 import CallToAction from "@/components/CallToAction"
 import { ButtonLink } from "@/components/Link"
@@ -22,77 +23,85 @@ import { ArrowLeftIcon } from "@/components/Icon"
 export default function BestPracticePage({ source, tags }) {
   const { frontmatter } = source
   return (
-    <Container px={0}>
-      <Stack pb={20}>
-        <SimpleGrid columns={24} gridGap="0.0625rem">
-          <Stack
-            gridColumn={["2 / -2", null, null, "4 / -5", "5 / span 14"]}
-            spacing={6}
-            pt={[5, null, null, 16]}
-          >
-            <Stack spacing={10}>
-              <ButtonLink
-                href="/#best-practices"
-                variant="ghost"
-                color="inherit"
-                leftIcon={<ArrowLeftIcon />}
-                alignSelf="flex-start"
-                _hover={{ bg: "gray.100", color: "inherit" }}
-              >
-                {"Back to recommendations"}
-              </ButtonLink>
-              <Stack spacing={3}>
-                <Heading as="h1" variant="bestPracticeTitle">
-                  {frontmatter.title}
-                </Heading>
-                {frontmatter.description && (
-                  <Text variant="pageSubtitle">{frontmatter.description}</Text>
-                )}
-                {/* <Text fontSize="lg" fontWeight={600} color="blue.500">
+    <>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.description || ""}
+      />
+      <Container px={0}>
+        <Stack pb={20}>
+          <SimpleGrid columns={24} gridGap="0.0625rem">
+            <Stack
+              gridColumn={["2 / -2", null, null, "4 / -5", "5 / span 14"]}
+              spacing={6}
+              pt={[5, null, null, 16]}
+            >
+              <Stack spacing={10}>
+                <ButtonLink
+                  href="/#best-practices"
+                  variant="ghost"
+                  color="inherit"
+                  leftIcon={<ArrowLeftIcon />}
+                  alignSelf="flex-start"
+                  _hover={{ bg: "gray.100", color: "inherit" }}
+                >
+                  {"Back to recommendations"}
+                </ButtonLink>
+                <Stack spacing={3}>
+                  <Heading as="h1" variant="bestPracticeTitle">
+                    {frontmatter.title}
+                  </Heading>
+                  {frontmatter.description && (
+                    <Text variant="pageSubtitle">
+                      {frontmatter.description}
+                    </Text>
+                  )}
+                  {/* <Text fontSize="lg" fontWeight={600} color="blue.500">
               {`Updated on ${day(frontmatter.date).format("MMMM DD, YYYY")}`}
             </Text> */}
-                <Wrap gridColumn="2 / span 15" spacing={3} py={3}>
-                  {tags.map((tag) => {
-                    return (
-                      <WrapItem
-                        key={tag.id}
-                        bg="gray.100"
-                        px={2}
-                        py={1}
-                        borderRadius="sm"
-                        fontWeight={600}
-                      >
-                        {tag.name}
-                      </WrapItem>
-                    )
-                  })}
-                  {frontmatter.regions.map((region) => {
-                    return (
-                      <WrapItem
-                        key={region}
-                        bg="gray.100"
-                        px={2}
-                        py={1}
-                        borderRadius="sm"
-                        fontWeight={600}
-                      >
-                        {region}
-                      </WrapItem>
-                    )
-                  })}
-                </Wrap>
+                  <Wrap gridColumn="2 / span 15" spacing={3} py={3}>
+                    {tags.map((tag) => {
+                      return (
+                        <WrapItem
+                          key={tag.id}
+                          bg="gray.100"
+                          px={2}
+                          py={1}
+                          borderRadius="sm"
+                          fontWeight={600}
+                        >
+                          {tag.name}
+                        </WrapItem>
+                      )
+                    })}
+                    {frontmatter.regions.map((region) => {
+                      return (
+                        <WrapItem
+                          key={region}
+                          bg="gray.100"
+                          px={2}
+                          py={1}
+                          borderRadius="sm"
+                          fontWeight={600}
+                        >
+                          {region}
+                        </WrapItem>
+                      )
+                    })}
+                  </Wrap>
+                </Stack>
+              </Stack>
+              <Stack spacing={3} pb={20}>
+                <MDXRemote {...source} components={mdxComponents}>
+                  {"Best practice"}
+                </MDXRemote>
               </Stack>
             </Stack>
-            <Stack spacing={3} pb={20}>
-              <MDXRemote {...source} components={mdxComponents}>
-                {"Best practice"}
-              </MDXRemote>
-            </Stack>
-          </Stack>
-        </SimpleGrid>
-        <CallToAction />
-      </Stack>
-    </Container>
+          </SimpleGrid>
+          <CallToAction />
+        </Stack>
+      </Container>
+    </>
   )
 }
 
