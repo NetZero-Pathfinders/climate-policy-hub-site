@@ -42,11 +42,12 @@ export default function HomeBanner() {
           overflow="hidden"
         >
           <Heading
+            as="h1"
             fontSize={["2xl", "3xl", null, "4xl"]}
             letterSpacing="tighter"
           >
             {
-              "The B20 Climate Policy Hub, in partnership with BloombergNEF, aims to help governments and companies to accelerate the transition to a low-carbon economy"
+              "The B20 Climate Policy Hub, in partnership with BloombergNEF, helps governments and companies accelerate the transition to a low-carbon economy"
             }
           </Heading>
           <Stack
