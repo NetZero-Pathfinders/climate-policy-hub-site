@@ -6,7 +6,7 @@ export default function CallToAction() {
   return (
     <Container
       px={0}
-      bgImage="url('/images/bg-cover.png')"
+      bgImage="url('/images/windmills-cover.jpg')"
       bgSize="cover"
       bgRepeat="no-repeat"
       bgPosition="center"
