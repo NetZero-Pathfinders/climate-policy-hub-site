@@ -25,7 +25,7 @@ export default function SiteFooter() {
               <img src="/images/bnef-logo-inverted.png" />
             </Link>
             <Link
-              href="https://about.bnef.com/"
+              href="https://www.netzeropathfinders.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,14 +40,14 @@ export default function SiteFooter() {
               <img src="/images/b20-brasil-logo-inverted.png" />
             </Link>
             <Link
-              href="https://b20brasil.org/"
+              href="https://www.portaldaindustria.com.br/cni/en/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="/images/cni-logo-inverted.png" />
             </Link>
             <Link
-              href="https://about.bnef.com/"
+              href="https://b20brazil.org/b20-secretariat#:~:text=The%20Secretariat%20for%20B20%20Brazil,hub%20for%20coordination%20and%20communication"
               target="_blank"
               rel="noopener noreferrer"
             >
