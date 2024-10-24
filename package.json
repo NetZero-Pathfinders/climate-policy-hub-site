@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -Rf out && rm -Rf .next",
     "develop": "npm run prepareFramework && next dev",
-    "build": "next build",
+    "build": "npm run prepareFramework && next build",
     "start": "next start",
     "lint": "next lint",
     "prepareFramework": "node ./scripts/prepareFramework.js"
